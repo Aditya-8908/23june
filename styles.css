@@ -1,0 +1,66 @@
+:root {
+  --pink-1: #ffd1e6;
+  --pink-2: #ffb3cd;
+  --accent: #6b1f3a;
+  --card-bg: rgba(255,255,255,0.65);
+  --max-width: 1000px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--accent);
+  background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 100%);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem;text-align:center}
+.site-header{padding:4rem 0;text-align:center}
+.site-header h1{margin:0;font-size:clamp(1.5rem,4vw,3rem)}
+.tagline{opacity:0.9}
+.card{background:var(--card-bg);padding:1.5rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);border:1px solid rgba(255,255,255,0.45)}
+.site-footer{padding:2rem 0;text-align:center;font-size:0.9rem;color:rgba(107,31,58,0.8)}
+
+/* Hero / centered question */
+.hero{min-height:60vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+.hero{min-height:72vh;display:flex;align-items:center;justify-content:center;padding:3rem;position:relative;overflow:visible}
+.hero-decor{position:absolute;inset: -8% -6% auto -6%;height:420px;border-radius:32px;background:radial-gradient(circle at 20% 30%, rgba(255,255,255,0.28), transparent 15%), radial-gradient(circle at 80% 60%, rgba(255,255,255,0.12), transparent 12%), linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0));filter:blur(28px);transform:rotate(-3deg);z-index:0}
+.hero-inner{max-width:820px;text-align:center;position:relative;z-index:2}
+.question{font-family:'Playfair Display', serif;font-size:clamp(1.5rem,4vw,2.4rem);margin:0 0 0.6rem;color:var(--accent);text-shadow:0 6px 18px rgba(107,31,58,0.06);line-height:1.08}
+.subtitle{font-family:'Poppins',sans-serif;color:rgba(107,31,58,0.8);margin:0 0 1.2rem;font-size:0.98rem}
+.options{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:0.8rem 1.4rem;border-radius:14px;background:linear-gradient(180deg,#fff,#fff0);color:var(--accent);text-decoration:none;border:1px solid rgba(107,31,58,0.12);box-shadow:0 8px 20px rgba(107,31,58,0.08);font-weight:700;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(107,31,58,0.12)}
+.btn:active{transform:translateY(-2px)}
+
+/* Reflective title panel */
+.title-panel{display:inline-block;position:relative;padding:0.55rem 1.1rem;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.6));box-shadow:0 10px 30px rgba(107,31,58,0.12);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.65)}
+.title-panel h1{margin:0;font-size:clamp(1.5rem,4vw,3rem);color:var(--accent);letter-spacing:0.2px}
+.title-panel::before{content:"";position:absolute;left:6%;right:6%;top:6%;height:42%;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.08));border-radius:10px;transform:skewY(-6deg);opacity:0.9;pointer-events:none}
+.title-panel::after{content:"";position:absolute;left:2%;right:2%;bottom:4%;height:8%;background:radial-gradient(ellipse at center, rgba(255,255,255,0.6), rgba(255,255,255,0));border-radius:50%;opacity:0.35;pointer-events:none}
+
+/* Red page styles */
+.red-page{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:3rem;background:linear-gradient(180deg,#7a0000,#b30000);color:#fff}
+.red-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);box-shadow:0 8px 30px rgba(0,0,0,0.35);padding:2rem;border-radius:12px}
+.pink-page{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:3rem;background:linear-gradient(180deg,#ffd1e6,#ff6fa8);color:#4a0b2b}
+.pink-card{background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.6);box-shadow:0 10px 40px rgba(0,0,0,0.08);padding:2rem;border-radius:16px}
+.red-card .long-text{white-space:pre-wrap;line-height:1.45}
+.timer-wrap{margin:1rem 0;font-weight:700}
+#timer{font-size:1.05rem;color:#ff1744}
+
+/* Falling rose elements */
+.rose{position:fixed;top:-12vh;z-index:9999;pointer-events:none;opacity:0.98;transform:translateY(0);animation-name:fall;animation-timing-function:linear}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:0.95}100%{transform:translateY(110vh) rotate(360deg);opacity:0.95}}
+
+/* Option3: wrong/angry accents */
+.wrong-row{display:flex;gap:0.6rem;justify-content:center;margin-bottom:0.8rem}
+.wrong-emoji{font-size:1.6rem;transform:translateY(0);opacity:0.95}
+.angry{color:#bf1e2e;font-weight:800;font-size:1.2rem}
+.angry .emoji{margin-left:0.6rem}
